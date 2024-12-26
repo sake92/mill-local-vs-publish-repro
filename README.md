@@ -1,7 +1,7 @@
 
 # Dependency resolution bug local vs published
 ```shell
-./mill -i sharaf.publishLocal
+./mill -i __.publishLocal
 ```
 
 vs

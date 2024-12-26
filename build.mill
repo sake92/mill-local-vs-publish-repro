@@ -7,7 +7,7 @@ import mill.scalalib.publish._
 import mill.contrib.sonatypecentral.SonatypeCentralPublishModule
 
 
-object sharaf extends ScalaModule with SonatypeCentralPublishModule {
+object `mill-local-vs-publish-runtime-deps` extends ScalaModule with SonatypeCentralPublishModule {
 
   def scalaVersion = "3.6.2"
   
@@ -17,32 +17,32 @@ object sharaf extends ScalaModule with SonatypeCentralPublishModule {
     ivy"io.undertow:undertow-core:2.3.18.Final"
   )
   
-  //def publishVersion = "0.0.1-local"
-  def publishVersion = "0.0.1"
+  def publishVersion = "0.0.1-local"
+  //def publishVersion = "0.0.1"
   
   def pomSettings = PomSettings(
-    description = "Mill plugin for Openapi4s generator",
+    description = "mill-local-vs-publish-runtime-deps",
     organization = "ba.sake",
-    url = "https://github.com/sake92/openapi4s",
+    url = "https://github.com/sake92/mill-local-vs-publish-repro",
     licenses = Seq(License.`Apache-2.0`),
-    versionControl = VersionControl.github(owner = "sake92", repo = "mill-openapi4s"),
+    versionControl = VersionControl.github(owner = "sake92", repo = "mill-local-vs-publish-repro"),
     developers = Seq(Developer("sake92", "Sakib Hadziavdic", "https://github.com/sake92"))
   )
 
 }
 
 // no xnio-nio in runClasspath
-object `sharaf-local` extends ScalaModule {
+object local extends ScalaModule {
   def scalaVersion = "3.6.2"
   def ivyDeps = Agg(
-    ivy"ba.sake::sharaf:0.0.1-local"
+    ivy"ba.sake::mill-local-vs-publish-runtime-deps:0.0.1-local"
   )
 }
 
 // has xnio-nio in runClasspath
-object `sharaf-released` extends ScalaModule {
+object released extends ScalaModule {
   def scalaVersion = "3.6.2"
   //def ivyDeps = Agg(
-   // ivy"ba.sake::sharaf:0.0.1"
+   // ivy"ba.sake::mill-local-vs-publish-runtime-deps:0.0.1"
   //)
 }
