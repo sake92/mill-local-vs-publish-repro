@@ -13,12 +13,12 @@ object `mill-local-vs-publish-runtime-deps` extends ScalaModule with SonatypeCen
   
   def ivyDeps = Agg(
     // https://mvnrepository.com/artifact/io.undertow/undertow-core/2.3.18.Final
-	// has runtime dep on https://mvnrepository.com/artifact/org.jboss.xnio/xnio-nio
+    // has runtime dep on https://mvnrepository.com/artifact/org.jboss.xnio/xnio-nio
     ivy"io.undertow:undertow-core:2.3.18.Final"
   )
   
-  def publishVersion = "0.0.1-local"
-  //def publishVersion = "0.0.1"
+  //def publishVersion = "0.0.1-local"
+  def publishVersion = "0.0.1"
   
   def pomSettings = PomSettings(
     description = "mill-local-vs-publish-runtime-deps",
