@@ -17,8 +17,8 @@ object `mill-local-vs-publish-runtime-deps` extends ScalaModule with SonatypeCen
     ivy"io.undertow:undertow-core:2.3.18.Final"
   )
   
-  //def publishVersion = "0.0.1-local"
-  def publishVersion = "0.0.1"
+  def publishVersion = "0.0.1-local"
+  //def publishVersion = "0.0.1"
   
   def pomSettings = PomSettings(
     description = "mill-local-vs-publish-runtime-deps",
@@ -42,7 +42,7 @@ object local extends ScalaModule {
 // has xnio-nio in runClasspath
 object released extends ScalaModule {
   def scalaVersion = "3.6.2"
-  //def ivyDeps = Agg(
-   // ivy"ba.sake::mill-local-vs-publish-runtime-deps:0.0.1"
-  //)
+  def ivyDeps = Agg(
+    ivy"ba.sake::mill-local-vs-publish-runtime-deps:0.0.1"
+  )
 }
